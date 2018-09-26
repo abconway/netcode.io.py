@@ -1,5 +1,5 @@
 # netcode.io.py
-Python 3 implementation of [Netcode.io](netcode.io)
+Python 3 implementation of [Netcode.io](http://netcode.io)
 
 
 ## Dependencies
