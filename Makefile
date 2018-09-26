@@ -1,10 +1,14 @@
 all: install
 
+
+develop: install
+	pip install -e .[dev]
+
 install:
 	pip install -e .
 
-develop: install
-	pip install -r requirements-dev.txt
+lint:
+	flake8 netcode
 
 test:
-	pytest
+	pytest tests

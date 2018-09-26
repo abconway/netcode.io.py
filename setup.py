@@ -3,7 +3,11 @@ from setuptools import setup, find_packages
 
 __version__ = '0.0.1'
 __requirements__ = [
-    'pysodium==0.7.0.post0',
+    'pysodium',
+]
+__requirements_dev__ = [
+    'flake8',
+    'pytest',
 ]
 
 
@@ -17,4 +21,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=__requirements__,
+    extras_require={
+        'dev': __requirements_dev__,
+    },
 )
