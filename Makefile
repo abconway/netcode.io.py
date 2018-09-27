@@ -1,6 +1,5 @@
 all: install
 
-
 develop: install
 	pip install -e .[dev]
 
