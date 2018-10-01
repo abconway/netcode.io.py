@@ -37,7 +37,7 @@ def encrypt(msg, nonce, key, ad=None):
             pad(str(nonce), length=crypto_aead_chacha20poly1305_ietf_NONCEBYTES, pad_char='0'),
             encoding='utf-8',
         )
-    if type(ad) != bytes:
+    if ad and type(ad) != bytes:
         ad = bytes(ad, encoding='utf-8')
     return crypto_aead_chacha20poly1305_ietf_encrypt(msg, ad, nonce, key)
 
@@ -48,6 +48,6 @@ def decrypt(msg, nonce, key, ad=None):
             pad(str(nonce), length=crypto_aead_chacha20poly1305_ietf_NONCEBYTES, pad_char='0'),
             encoding='utf-8',
         )
-    if type(ad) != bytes:
+    if ad and type(ad) != bytes:
         ad = bytes(ad, encoding='utf-8')
     return crypto_aead_chacha20poly1305_ietf_decrypt(msg, ad, nonce, key)
