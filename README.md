@@ -16,12 +16,7 @@ make
 ## Development
 ```
 make develop
-```
-__Recommended__: Use a Virtualenv
-```
-virtualenv -p $(which python3) venv
-source venv/bin/activate
-make develop
+make run
 ```
 
 
