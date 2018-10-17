@@ -1,13 +1,22 @@
 all: install
 
-develop: install
-	pip install -e .[dev]
+clean:
+	rm -rf venv
+
+develop: venv install
+	venv/bin/pip install -e .[dev]
 
 install:
 	pip install -e .
 
 lint:
-	flake8 netcode
+	venv/bin/flake8 netcode
+
+run:
+	venv/bin/honcho start
 
 test:
-	pytest tests
+	venv/bin/pytest tests
+
+venv:
+	virtualenv venv -p $(shell which python3)

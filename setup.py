@@ -7,6 +7,7 @@ __requirements__ = [
 ]
 __requirements_dev__ = [
     'flake8',
+    'honcho',
     'pytest',
 ]
 
